@@ -1,0 +1,91 @@
+
+
+.inside-gallery {
+    padding: 40px;
+    display: none;
+}
+
+.inside-gallery .lightbox img {
+    width: 100%;
+    margin-bottom: 30px;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+
+
+.inside-gallery .lightbox img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.inside-gallery img {
+    border-radius: 4px;
+}
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}
+
+/* 
+.inside-gallery ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .inside-gallery  li {
+    height: 40vh;
+    flex-grow: 1;
+  }
+  
+  .inside-gallery li:last-child {
+    /* // There's no science in using "10" here. In all my testing, this delivered the best results. 
+    flex-grow: 10;
+  }
+  
+  .inside-gallery img {
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+  .inside-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+  
+  @media (max-aspect-ratio: 1/1) {
+    .inside-gallery li {
+      height: 30vh;
+    }
+  }
+  
+  
+  @media (max-height: 480px) {
+    .inside-gallery li {
+      height: 80vh;
+    }
+  }
+  
+  
+  @media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+    .inside-gallery ul {
+      flex-direction: row;
+    }
+  
+    .inside-gallery li {
+      height: auto;
+      width: 100%;
+    }
+    .inside-gallery img {
+      width: 100%;
+      max-height: 75vh;
+      min-width: 0;
+    }
+  }
+
+@media(max-width: 768px) {
+    
+    .inside-gallery .inside-gallery {
+        padding: 0;
+    }
+    } */
