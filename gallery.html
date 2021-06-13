@@ -103,36 +103,48 @@
 
         <div class="row">
 
-            <div class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-6">
                 <div class="thumbnail">
-                    <a class="lightbox" onclick="show('inside-gallery')">
-                        <img src="https://i.imgur.com/LybbwGs.jpg" alt="Park">
+                    <a class="lightbox" onclick="show('wGr8id3')">
+                        <img src="./images/album1.jpg" alt="Park">
                     </a>
                     <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h3>FEED THE HUNGRY</h3>
+                        <p>The most powerful way to express the Love of Christ Jesus.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-6">
                 <div class="thumbnail">
-                    <a class="lightbox" href="./images/ff.jpg">
-                        <img src="./images/ff.jpg" alt="Bridge">
+                    <a class="lightbox" onclick="show('nwwKaAi')">
+                        <img src="./images/album2.jpg" alt="Bridge">
                     </a>
                     <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h3>Church Service</h3>
+                        <p>Inspiring Lives to be an InspirationConnecting many to Christ through Unadulterated Word of GOD..</p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-4">
+            
+            <div class="col-sm-6 col-md-6">
                 <div class="thumbnail">
-                    <a class="lightbox" href="./images/series-2000.jpg">
-                        <img src="./images/series-2000.jpg" alt="Tunnel">
+                    <a class="lightbox" onclick="show('n58DACA')">
+                        <img src="./images/album4.jpg" alt="Bridge">
                     </a>
                     <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h3>1st Anniversary of CJM</h3>
+                        <p>Celebrating Goodness & Faithfulness of Christ Jesus.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <div class="thumbnail">
+                    <a class="lightbox" onclick="show('jfV9Ia3')">
+                        <img src="./images/album3.jpg" alt="Bridge">
+                    </a>
+                    <div class="caption">
+                        <h3>Meeting at Nagaram</h3>
+                        <p>Preaching Christ Crucified and Resurrected at Nagaram.</p>
                     </div>
                 </div>
             </div>
@@ -143,8 +155,12 @@
 
 
     <div class="inside-gallery" >
+        <div style="text-align: center;margin: 30px 0;">
 
-        <div class="row">
+         <a  onclick="back()" class="btn btn--footer">< Back</a>
+        </div>
+        <div class="row" id="gallaryData">
+
             <!-- <ul>
                 <li>
                     
@@ -190,11 +206,7 @@
             </li><li></li>
             </ul> -->
 
-            <div class="col-sm-12 col-md-4">
-                <a class="lightbox" href="./images/dd.jpg">
-                    <img src="./images/dd.jpg" alt="Bridge">
-                </a>
-            </div>
+            <!-- <div class="col-sm-12 col-md-4"><a class="lightbox" href="./images/dd.jpg"><img src="./images/dd.jpg" alt="Bridge"></a></div>
             <div class="col-sm-6 col-md-4">
                 <a class="lightbox" href="./images/ff.jpg">
                     <img src="./images/ff.jpg" alt="Park">
@@ -234,7 +246,7 @@
                 <a class="lightbox" href="./images/series-2000.jpg">
                     <img src="./images/series-2000.jpg" alt="Tunnel">
                 </a>
-            </div>
+            </div> -->
 
         </div>
 
@@ -354,12 +366,57 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
     <script>
         baguetteBox.run('.tz-gallery');
-        baguetteBox.run('.inside-gallery');
-        function show(selection){
-            $(".tz-gallery").fadeOut(500);
-            setTimeout(function(){ $("."+selection).fadeIn(500);}, 500);
+        
+        // Feed the hungry
+        var albumID1 = 'wGr8id3'; 
+        // Church
+        var albumID2 = 'nwwKaAi';
+        // Nagaram
+        var albumID3 = 'jfV9Ia3';
+        // Anniversary
+        var albumID4 = 'n58DACA';
+        var clientID = '9ff4e37fbbf3338';
 
+        var albumData=[];
+        
+        var albumAPI = "https://api.imgur.com/3/album/" + albumID + "/images";
+        function show(selection){
+
+            $(".tz-gallery").fadeOut(500);
             
+            $.ajax({
+                url: "https://api.imgur.com/3/album/" + selection + "/images",
+                headers:{
+                    'Authorization':'Client-ID '+clientID
+                },
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) { 
+                    this.albumData=data.data
+                    console.log(JSON.stringify(data));
+                    
+
+                    var pageElement = "";
+                    for (var i = 0; i < this.albumData.length; i++) {
+                        pageElement += '<div class="col-sm-12 col-md-4"><a class="lightbox" href="'+this.albumData[i].link+'"><img src="'+this.albumData[i].link+'" alt="Img"></a></div>';
+                    }
+                    
+                    var container = document.getElementById("gallaryData");
+                    container.innerHTML = pageElement;
+                    baguetteBox.run('.inside-gallery');
+
+                    // setTimeout(function(){ }, 500);
+                    $(".inside-gallery").fadeIn(500);
+
+                },
+                error: function() { console.log("ERRORZ"); }
+            });
+        }
+        
+        function back(){
+            $(".inside-gallery").fadeOut(500);
+                    setTimeout(function(){ $(".tz-gallery").fadeIn(500); }, 500);
+                   
 
         }
     </script>

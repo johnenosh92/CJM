@@ -26,6 +26,7 @@
     border: none;
     transition: 0.15s ease-in-out;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
 }
 
 .tz-gallery .thumbnail:hover {
@@ -34,14 +35,15 @@
 
 .tz-gallery .lightbox img {
     border-radius: 4px 4px 0 0;
-    
     height: 200px;
+    width: 100%;
     object-fit: cover;
 }
 
 .tz-gallery .caption{
     padding: 26px 30px;
     text-align: center;
+    height: 100px;
 }
 
 .tz-gallery .caption h3 {
