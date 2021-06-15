@@ -21,7 +21,7 @@ if ($_POST) {
 	$subject = "WEBSITE MAIL - ". ucwords($name);
 	// info@odedtech.com
 	// send email
-	if (mail ( $toEmail, $subject, $message, $headers )) {
+	if ($mail ( $toEmail, $subject, $message, $headers )) {
 		print "<p class='success'>Mail Sent.</p>";
 	} else {
 		print "<p class='Error'>Problem in Sending Mail.Try again later.</p>";
