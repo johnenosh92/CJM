@@ -3396,15 +3396,16 @@ html.no-csstransitions .hero-content {
  * ## page header 
  * ------------------------------------------------------------------- */
 .page-header {
-  min-height: 24rem;
-  padding-top: 24rem;
-  padding-bottom: 8rem;
+  /* min-height: 24rem; */
+  /* padding-top: 24rem; */
+  padding-top: 10rem !important;
   text-align: center;
   background-color: #121212;
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-repeat: no-repeat; */
+  background-size: contain;
   background-position: center;
   position: relative;
+  margin: 0 !important;
 }
 
 .page-header::before {
@@ -3416,7 +3417,7 @@ html.no-csstransitions .hero-content {
   width: 100%;
   height: 100%;
   background-color: #000000;
-  opacity: .7;
+  opacity: .5;
 }
 
 .page-header .gradient-overlay {
@@ -3439,23 +3440,23 @@ html.no-csstransitions .hero-content {
 }
 
 .page-header--about {
-  background-image: url(../images/header-bgs/about-header-bg-2000.jpg);
+  background-image: url(../images/pattern.jpg);
 }
 
 .page-header--contact {
-  background-image: url(../images/header-bgs/contact-header-bg-2000.jpg);
+  background-image: url(../images/pattern.jpg);
 }
 
 .page-header--events {
-  background-image: url(../images/header-bgs/events-header-bg-2000.jpg);
+  background-image: url(../images/pattern.jpg);
 }
 
 .page-header--connect {
-  background-image: url(../images/header-bgs/connect-header-bg-2000.jpg);
+  background-image: url(../images/pattern.jpg);
 }
 
 .page-header--volunteer {
-  background-image: url(../images/header-bgs/volunteer-header-bg-2000.jpg);
+  background-image: url(../images/pattern.jpg);
 }
 
 .page-header__content {
@@ -3466,7 +3467,7 @@ html.no-csstransitions .hero-content {
  * ## page content 
  * ------------------------------------------------------------------- */
 .page-content {
-  padding-top: 12rem;
+  padding-top: 7rem;
   padding-bottom: 16rem;
   background-color: #ffffff;
 }
@@ -3603,7 +3604,7 @@ html.no-csstransitions .hero-content {
 
 @media screen and (max-width:600px) {
   .page-header h1 {
-    font-size: 4.8rem;
+    font-size: 7vw !important;
   }
 
   .event-thumb {
@@ -3704,4 +3705,31 @@ html.no-csstransitions .hero-content {
 .top-section.s-hero{
   background-image: url(../images/hero-bg-3000.jpg);
 }
+
+
 /*# sourceMappingURL=main.css.map */
+
+.upi img{
+  width: 50px;
+  margin: 5px;
+}
+#phn{
+  cursor: pointer;
+}
+.upi #phn .material-icons{
+  visibility: hidden;
+  position: relative;
+  top: -30px;
+  color: #b3b3b3;
+  left: -30px;
+}
+.upi #phn:hover .material-icons{
+  visibility:visible;
+}
+@media screen and (max-width:600px) {
+  
+.upi h1, .upi h2{
+  font-size: 2.5rem;
+}
+ 
+}

@@ -5,7 +5,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Hesed - Contact</title>
+    <title>CJM - Gallery</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -37,6 +37,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
     <link rel="stylesheet" href="./css/thumbnail-gallery.css">
     <link rel="stylesheet" href="./css/gallery-grid.css">
+    <style type="text/css">
+        .col-sm-6{
+            width: 50%;
+        }
+    </style>
 </head>
 
 <body id="top">
@@ -67,9 +72,10 @@
                 <li><a href="index.html" title="Home">Home</a></li>
                 <li><a href="about.html" title="About">About</a></li>
                 <li><a href="media.html" title="Services">Media</a></li>
-                <li><a href="gallery.html" class="current" title="Services">Gallery</a></li>
-                <li class="current"><a href="contact.html" title="Contact us">Contact</a></li>	
-            </ul>
+                <li class="current"><a href="gallery.html" class="current" title="Services">Gallery</a></li>
+                <li ><a href="contact.html" title="Contact us">Contact</a></li>	
+                <li ><a href="partner.html" title="Partner With Us">Partner With Us</a> 
+                </ul>
         </nav>
 
         <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
@@ -84,7 +90,7 @@
         <div class="gradient-overlay"></div>
         <div class="row page-header__content">
             <div class="column">
-                <h1>Gallery</h1>
+                <h1>GALLERY</h1>
             </div>
         </div>
 
@@ -103,7 +109,7 @@
 
         <div class="row">
 
-            <div class="col-sm-6 col-md-6">
+            <div class=" col-md-6">
                 <div class="thumbnail">
                     <a class="lightbox" onclick="show('wGr8id3')">
                         <img src="./images/album1.jpg" alt="Park">
@@ -114,7 +120,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6">
+            <div class=" col-md-6">
                 <div class="thumbnail">
                     <a class="lightbox" onclick="show('nwwKaAi')">
                         <img src="./images/album2.jpg" alt="Bridge">
@@ -126,7 +132,7 @@
                 </div>
             </div>
             
-            <div class="col-sm-6 col-md-6">
+            <div class=" col-md-6">
                 <div class="thumbnail">
                     <a class="lightbox" onclick="show('n58DACA')">
                         <img src="./images/album4.jpg" alt="Bridge">
@@ -137,7 +143,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6">
+            <div class="col-md-6">
                 <div class="thumbnail">
                     <a class="lightbox" onclick="show('jfV9Ia3')">
                         <img src="./images/album3.jpg" alt="Bridge">
@@ -155,7 +161,7 @@
 
 
     <div class="inside-gallery" >
-        <div style="text-align: center;margin: 30px 0;">
+        <div style="text-align: center;    margin: 0 0 20px 0;;">
 
          <a  onclick="back()" class="btn btn--footer">< Back</a>
         </div>
@@ -323,13 +329,14 @@
                     <div class="column large-7 medium-full">
                         <h4 class="h6">Our Location</h4>
                         <p>
-                        1600 Amphitheatre Parkway <br>
-                        Mountain View, California <br>
-                        94043 US
+                            Catholic Bhavan,
+                            Beside Bhega's Montessori School,<br>
+                            Goutham Nagar, Malkajgiri,<br>
+                            Secunderabad.
                         </p>
         
                         <p>
-                        <a href="https://goo.gl/maps/bc7C7eYtSmnNs6216" target="_blank" class="btn btn--footer">Get Direction</a>
+                        <a href="https://goo.gl/maps/AZhyNDE489pMUvJS8" target="_blank" class="btn btn--footer">Get Direction</a>
                         </p>
                     </div>
                     <div class="column large-5 medium-full">
@@ -403,7 +410,7 @@
 
                     var pageElement = "";
                     for (var i = 0; i < this.albumData.length; i++) {
-                        pageElement += '<div class="col-md-4"><a class="lightbox" href="'+this.albumData[i].link+'"><img src="'+this.albumData[i].link+'" alt="Img"></a></div>';
+                        pageElement += '<div class="col-sm-6 col-md-4"><a class="lightbox" href="'+this.albumData[i].link+'"><img src="'+this.albumData[i].link+'" alt="Img"></a></div>';
                     }
                     
                     var container = document.getElementById("gallaryData");
