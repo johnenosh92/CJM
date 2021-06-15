@@ -232,7 +232,13 @@ p.lead {
   p.lead {
     font-size: 2.6rem;
   }
+  .s-about{
+    height: auto !important;
+  }
+.s-about p.lead{
+    font-size: 1.6rem;
 
+}
 }
 
 @media screen and (max-width:600px) {
@@ -2464,14 +2470,24 @@ html.no-csstransitions .hero-content {
   }
 
 }
-
-@media screen and (max-width:800px) {
+@media screen and (max-width:800px)  and (orientation: portrait){
   .hero-content {
     max-width: 480px;
+    text-align: center;
+  }
+  
+  .hero-content h1::before {
+    left: 50%;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+@media screen and (max-width:800px) {
+  .hero-content {
+    /* max-width: 480px; */
     width: 70%;
     padding-top: 22vh;
     padding-bottom: 10vh;
-    text-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
@@ -2486,9 +2502,10 @@ html.no-csstransitions .hero-content {
   }
 
   .hero-content h1::before {
-    left: 50%;
+    /* left: 50%; */
+    /* left: .8rem;
     -webkit-transform: translate3d(-50%, 0, 0);
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0); */
   }
 
   .hero-content__buttons .btn {
@@ -2534,11 +2551,14 @@ html.no-csstransitions .hero-content {
   .hero-scroll {
     -webkit-transform: none;
     transform: none;
-    right: auto;
+    right: 0;
+    text-align: center;
     left: 0;
     bottom: 6.4rem;
   }
-
+  .hero-scroll .scroll-link {
+    padding: 0;
+  }
 }
 
 
@@ -3094,6 +3114,9 @@ html.no-csstransitions .hero-content {
   background-image: url(../images/icons/social/icon-instagram.svg);
 }
 
+.social-list__icon--youtube::before {
+  background-image: url(../images/icons/social/icon-youtube.svg);
+}
 .social-list__icon--email::before {
   background-image: url(../images/icons/social/icon-email.svg);
 }
@@ -3212,7 +3235,7 @@ html.no-csstransitions .hero-content {
 }
 
 .footer-logo img {
-  height: 80px;
+  height: auto;
 }
 
 /* -------------------------------------------------------------------
@@ -3344,6 +3367,9 @@ html.no-csstransitions .hero-content {
     bottom: 0;
     right: 0;
   }
+  .s-footer .column{
+    text-align: center;
+  }
 
 }
 
@@ -3354,8 +3380,8 @@ html.no-csstransitions .hero-content {
   }
 
   .footer-logo img {
-    width: 116px;
-    height: 30px;
+    /* width: 116px;
+    height: 30px; */
   }
 
 }
@@ -3561,13 +3587,16 @@ html.no-csstransitions .hero-content {
  * responsive:
  * page styles
  * ------------------------------------------------------------------- */
+@media screen and (max-width:900px) {
+
+.about-sched{
+  font-size: 1.5rem;
+
+}
+}
 @media screen and (max-width:800px) {
   .page-header {
     padding-top: 20rem;
-  }
-
-  .page-header h1 {
-    font-size: 5.5rem;
   }
 
 }
@@ -3580,7 +3609,13 @@ html.no-csstransitions .hero-content {
   .event-thumb {
     padding: 2rem;
   }
-
+  p.lead {
+    font-size: 1.7rem;
+}
+.tab button {
+  font-size: 10px !important;
+  padding: 0 10px;
+}
 }
 
 @media screen and (max-width:500px) {
@@ -3609,6 +3644,10 @@ html.no-csstransitions .hero-content {
 @media screen and (max-width:400px) {
   .page-header h1 {
     font-size: 4.2rem;
+  }
+
+  .page-header h1 {
+    font-size: 5.5rem;
   }
 
 }
