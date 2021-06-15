@@ -1,4 +1,5 @@
 $('#sendmail').click(function() {
+	
 	var name = $("#name").val();
 	var email = $("#email").val();
 	var text = $("#message").val();
