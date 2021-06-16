@@ -96,3 +96,15 @@
           padding: 0;
       }
       }
+
+      @media(max-width: 500px) {
+
+        .col-sm-6 {
+          width: 50%;
+          padding: 0 7px;
+      }
+
+      .inside-gallery .lightbox img {
+        margin-bottom: 14px;
+      }
+        }

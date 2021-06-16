@@ -129,13 +129,14 @@ a{
   transition: all 0.3s ease-in-out;
 
 }
-a:hover{
-  color: #fddd91;
-
+a:hover,
+a:active ,a:focus{
+  color: #fddd91 !important;
+  text-decoration: none !important;
 }
 a:hover,
 a:active {
-  outline: 0;
+  /* outline: 0; */
 }
 
 /* ===================================================================
@@ -2027,7 +2028,7 @@ margin:0;
     display: block;
     height: auto;
     font-size: 10px;
-    margin: 0 0 4rem 0;
+    margin: 0;
     padding-left: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
@@ -2475,7 +2476,12 @@ html.no-csstransitions .hero-content {
     max-width: 480px;
     text-align: center;
   }
-  
+  .hero-content .column{
+    bottom: -100px;
+  }
+  .hero-content h2 {
+    font-size: 3vw;
+  }
   .hero-content h1::before {
     left: 50%;
     -webkit-transform: translate3d(-50%, 0, 0);
@@ -3398,7 +3404,7 @@ html.no-csstransitions .hero-content {
 .page-header {
   /* min-height: 24rem; */
   /* padding-top: 24rem; */
-  padding-top: 10rem !important;
+  padding-top: 13rem !important;
   text-align: center;
   background-color: #121212;
   /* background-repeat: no-repeat; */
