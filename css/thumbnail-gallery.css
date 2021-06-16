@@ -84,3 +84,9 @@
     padding: 0;
 }
 }
+@media(max-width: 500px) {
+
+.tz-gallery .caption {
+    height: auto;
+}
+}
