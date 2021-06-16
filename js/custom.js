@@ -339,4 +339,22 @@
 
 
       
+  $(window).on("orientationchange",function(){
+    // alert("The orientation has changed!");
+    setTimeout(function(){
+        var div1 = $('.service-video-embed');
+        var width = div1.width();
         
+        div1.css('height', ((width/100)*56.25)) ;
+
+
+        var div2 = $('.video-embed');
+        var width = div2.width();
+        
+        div2.css('height',  (width/100)*56.25 );
+     }, 10);
+
+    
+
+      
+  });
