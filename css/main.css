@@ -3155,6 +3155,12 @@ html.no-csstransitions .hero-content {
     width: 2.4rem;
   }
 
+  .s-footer a.btn{
+
+    width: 100%;
+    font-size: 50%;
+    padding: 0;
+  }
 }
 
 @media screen and (max-width:600px) {
@@ -3373,13 +3379,13 @@ html.no-csstransitions .hero-content {
     bottom: 0;
     right: 0;
   }
-  .s-footer .column{
-    text-align: center;
-  }
 
 }
 
 @media screen and (max-width:400px) {
+  .s-footer .column{
+    text-align: center;
+  }
   .btn--footer {
     display: block;
     margin-right: 0;
@@ -3737,5 +3743,4 @@ html.no-csstransitions .hero-content {
 .upi h1, .upi h2{
   font-size: 2.5rem;
 }
- 
 }

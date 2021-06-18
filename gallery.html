@@ -13,12 +13,11 @@
     ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSS
+    <!-- bootstrap
     ================================================== -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/main.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+   
     <!-- script
     ================================================== -->
     <script src="js/modernizr.js"></script>
@@ -31,12 +30,14 @@
     <link rel="manifest" href="site.webmanifest">
 
 
-    <!-- bootstrap
+     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="./css/thumbnail-gallery.css">
     <link rel="stylesheet" href="./css/gallery-grid.css">
+
     <style type="text/css">
         .col-sm-6{
             width: 50%;
@@ -115,7 +116,7 @@
                         <img src="./images/album1.jpg" alt="Park">
                     </a>
                     <div class="caption">
-                        <h3>FEED THE HUNGRY</h3>
+                        <h3>Charity - Feed The Hungry</h3>
                         <p>The most powerful way to express the Love of Christ Jesus.</p>
                     </div>
                 </div>
@@ -165,7 +166,13 @@
 
          <a  onclick="back()" class="btn btn--footer" style="line-height: 0;padding: 20px;height: auto;">< Back</a>
         </div>
+        <div class="row" id="galleryTitle">
+            
+        </div>
         <div class="row" id="gallaryData">
+
+            
+
 
             <!-- <ul>
                 <li>
@@ -326,7 +333,7 @@
             </div>
             <div class="column large-half tab-full">
                 <div class="row">
-                    <div class="column large-7 medium-full">
+                    <div class="column large-7 small-full">
                         <h4 class="h6">Our Location</h4>
                         <p>
                             Catholic Bhavan,<br>
@@ -339,7 +346,7 @@
                         <a href="https://goo.gl/maps/AZhyNDE489pMUvJS8" target="_blank" class="btn btn--footer">Get Direction</a>
                         </p>
                     </div>
-                    <div class="column large-5 medium-full">
+                    <div class="column large-5 small-full">
                         <h4 class="h6">Quick Links</h4>
                         <ul class="footer-list">
                             <li><a href="index.html">Home</a></li>
@@ -415,11 +422,47 @@
                     
                     var container = document.getElementById("gallaryData");
                     container.innerHTML = pageElement;
+                    let gal=document.getElementById("galleryTitle");
+
+                    switch(selection) {
+                        case 'wGr8id3':
+                            gal.innerHTML='<div class="column "><h3>Charity - Feed The Hungry</h3><p>The most powerful way to express the Love of Christ Jesus. <br>By the Grace of God, Christ Jesus Ministries were privileged to Feed over 6000 souls for over a month during the global Pandemic.</p></div>'
+                            break;
+                        case "nwwKaAi":
+                            gal.innerHTML='<div class="column "><h3>Church Service</h3><p>Inspiring Lives to be an InspirationConnecting many to Christ through Unadulterated Word of GOD..</p></div>'
+                            break;
+                        case "jfV9Ia3":
+                            gal.innerHTML='<div class="column "><h3>Meeting at Nagaram</h3><p>Preaching Christ Crucified and Resurrected at Nagaram.</p></div>'
+                            break;
+                        case "n58DACA":
+                            gal.innerHTML='<div class="column "><h3>1st Anniversary of CJM</h3><p>Celebrating Goodness & Faithfulness of Christ Jesus.</p></div>'
+                            break;
+                    }
+
+
+                    
+
+
+
+
+
                     baguetteBox.run('.inside-gallery');
+
+
+
 
                     // setTimeout(function(){ }, 500);
                     $(".inside-gallery").fadeIn(500);
 
+                    // setTimeout(function(){
+                    //     var div1 = $('.lightbox');
+                    //     var div2 = $('.lightbox img');
+                    // var width = div1.width();
+                    
+                    // div2.css('height', ((width/100)*56.25)) ;
+                    // }, 110);
+
+                    
                 },
                 error: function() { console.log("ERRORZ"); }
             });
