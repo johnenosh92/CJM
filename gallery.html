@@ -40,7 +40,7 @@
 
     <style type="text/css">
         .col-sm-6{
-            width: 50%;
+            /* width: 50%; */
         }
     </style>
 </head>
@@ -385,7 +385,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
     <script>
         baguetteBox.run('.tz-gallery');
-        
+        $(window).on("orientationchange",function(){
+                console.log("orient")
+                setTimeout(function(){
+                    var div4 = $('#gallaryData .lightbox');
+                    var width4=div4.width();
+                    div4.css('height', ((width4/100)*56.25)) ;
+                    }, 50);
+            });
+
+
         // Feed the hungry
         var albumID1 = 'wGr8id3'; 
         // Church
@@ -417,7 +426,7 @@
 
                     var pageElement = "";
                     for (var i = 0; i < this.albumData.length; i++) {
-                        pageElement += '<div class="col-sm-6 col-md-4"><a class="lightbox" href="'+this.albumData[i].link+'"><img src="'+this.albumData[i].link+'" alt="Img"></a></div>';
+                        pageElement += '<div class="col-sm-6 col-md-4 col-lg-4 "><a class="lightbox" href="'+this.albumData[i].link+'"><img class="galleryimg" src="'+this.albumData[i].link+'" alt="Img"></a></div>';
                     }
                     
                     var container = document.getElementById("gallaryData");
@@ -454,20 +463,18 @@
                     // setTimeout(function(){ }, 500);
                     $(".inside-gallery").fadeIn(500);
 
-                    // setTimeout(function(){
-                    //     var div1 = $('.lightbox');
-                    //     var div2 = $('.lightbox img');
-                    // var width = div1.width();
-                    
-                    // div2.css('height', ((width/100)*56.25)) ;
-                    // }, 110);
+                    setTimeout(function(){
+                    var div4 = $('#gallaryData .lightbox');
+                    var width4=div4.width();
+                    div4.css('height', ((width4/100)*56.25)) ;
+                    }, 50);
 
                     
                 },
                 error: function() { console.log("ERRORZ"); }
             });
         }
-        
+            
         function back(){
             $(".inside-gallery").fadeOut(500);
                     setTimeout(function(){ $(".tz-gallery").fadeIn(500); }, 500);

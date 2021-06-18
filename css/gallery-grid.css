@@ -7,15 +7,17 @@
 
 .inside-gallery .lightbox img {
     width: 100%;
+    height: 100%;
     margin-bottom: 30px;
     transition: 0.2s ease-in-out;
-    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 3px #00000033;
     object-fit: cover;
 }
 .lightbox{
   width: 100%;
   display: inline-block;
   min-height: 10px;
+  margin-bottom: 30px;
 }
 
 .inside-gallery .lightbox img:hover {
@@ -98,7 +100,10 @@
     } */
 
     @media(max-width: 768px) {
-    
+      .col-md-4 {
+        width: 33.33333333%;
+        /* padding: 0 7px; */
+    }
       .inside-gallery  {
           padding: 0;
       }
@@ -117,4 +122,7 @@
       .inside-gallery .lightbox img {
         margin-bottom: 14px;
       }
+      .lightbox {
+        margin-bottom: 14px;
+    }
         }
