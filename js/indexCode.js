@@ -36,3 +36,14 @@ $.getJSON("https://www.googleapis.com/youtube/v3/playlistItems?playlistId=PLxd5Z
   div.css('height',  (width/100)*56.25 );
   
 });
+
+$(window).on("orientationchange",function(){
+  console.log("orient")
+  setTimeout(function(){
+      
+var div = $('.video-embed');
+var width = div.width();
+
+div.css('height',  (width/100)*56.25 );
+      }, 50);
+});
