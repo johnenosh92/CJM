@@ -33,6 +33,7 @@
             pgNums += '<li><a class="pgn__next" onclick="pageNext()" href="#0">Next</a></li>';
 
         }
+        sermonsJSON.items=sermonsJSON.items.sort( compare );
         
         var container = document.getElementById("pgSermons");
         container.innerHTML = pgNums;
@@ -192,6 +193,7 @@
         serPgNums += '<li><a class="ser_pgn_next" onclick="servicePageNext()" href="#0">Next</a></li>';
 
       }
+      servicesJSON.items=servicesJSON.items.sort( compare );
       
       var container = document.getElementById("pgServices");
       container.innerHTML = serPgNums;
@@ -358,3 +360,16 @@
 
       
   });
+  function compare( a, b ) {
+      let c= new Date(a.snippet.publishedAt.toString());
+      let d=new Date(b.snippet.publishedAt.toString())
+    if ( c > d ){
+      return -1;
+    }
+    if ( c < d ){
+      return 1;
+    }
+    return 0;
+  }
+  
+  
